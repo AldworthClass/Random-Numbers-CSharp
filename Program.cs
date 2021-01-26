@@ -45,8 +45,9 @@ namespace Random_Numbers
                 Console.WriteLine("The random numbers were different! Not weird.");
             }
             
-            // Task 1 and 2 from lesson
+            // Task 1, 2 and 3 from lesson
             Console.WriteLine();
+            Console.WriteLine("-----------------------");
             Console.WriteLine("Task 1 - Random Numbers");
             Console.WriteLine("-----------------------");
             Task1RandomNumbers(generator);    // Calls Task1RandomNumber method, and passes the random number generator to it
@@ -54,9 +55,17 @@ namespace Random_Numbers
             
             
             Console.WriteLine();
+            Console.WriteLine("----------------------------------------");
             Console.WriteLine("Task 2 - Slightly Less Bad Guessing Game");
             Console.WriteLine("----------------------------------------");
             Task2Guess(generator);    // Calls Task2Guess method, and passes the random number generator to it
+            Console.WriteLine();
+
+            Console.WriteLine();
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Task 3 - Roll the Dice");
+            Console.WriteLine("----------------------");
+            Task3RollDice(generator);   // Calls Task3RollDice method, and passes the random number generator to it
 
 
             Console.ReadLine();	// Keeps the program from quitting
@@ -69,7 +78,7 @@ namespace Random_Numbers
             int max, min;
             Console.WriteLine("Provide me with a maximum value: ");
             max = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Provide me with a maximum value smaller than the maximum: ");
+            Console.WriteLine("Provide me with a minimum value smaller than the maximum of " + max + ": ");
             min = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Here is a random number between " + min + " and " + max + ":");
             Console.WriteLine(generator.Next(min, max + 1));
@@ -87,6 +96,20 @@ namespace Random_Numbers
             else
                 Console.WriteLine("Sorry but no, the secret number was " + secretNumber);
 
+        }
+
+        // Solution for Task 3 - Toll the Dice
+        public static void Task3RollDice(Random generator)
+        {
+            int num1, num2, total;
+            Console.WriteLine("Hit ENTER to roll the dice.");
+            Console.ReadLine();
+            num1 = generator.Next(1, 7);
+            num2 = generator.Next(1, 7);
+            total = num1 + num2;
+            Console.WriteLine("Die 1 - " + num1);
+            Console.WriteLine("Die 2 - " + num2);
+            Console.WriteLine("Total - " + total);
         }
     }
 }
