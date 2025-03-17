@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Random_Numbers
@@ -122,6 +123,9 @@ namespace Random_Numbers
         public static void Task4Magic8Ball(Random generator)
         {
             int response = generator.Next(6);
+            Console.WriteLine("Welcome to the future-seer 3000.  Please ask your yes/no question:");
+            Console.ReadLine(); // Since we do nothing with the users question, we don't need to store it in a variable
+            Thread.Sleep(500);
             if (response == 0)
                 Console.WriteLine("Yes, definitely!");
             else if (response == 1)
