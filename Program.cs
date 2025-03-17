@@ -67,6 +67,13 @@ namespace Random_Numbers
             Console.WriteLine("----------------------");
             Task3RollDice(generator);   // Calls Task3RollDice method, and passes the random number generator to it
 
+            Console.WriteLine();
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Task 4 - Magic 8-Ball");
+            Console.WriteLine("----------------------");
+            Task4Magic8Ball(generator);   // Calls Task3RollDice method, and passes the random number generator to it
+
+
 
             Console.ReadLine();	// Keeps the program from quitting
         }
@@ -110,6 +117,24 @@ namespace Random_Numbers
             Console.WriteLine("Die 1 - " + num1);
             Console.WriteLine("Die 2 - " + num2);
             Console.WriteLine("Total - " + total);
+        }
+        // Solution for Task 4 - Magic 8-Ball
+        public static void Task4Magic8Ball(Random generator)
+        {
+            int response = generator.Next(6);
+            if (response == 0)
+                Console.WriteLine("Yes, definitely!");
+            else if (response == 1)
+                Console.WriteLine("Ask again later");
+            else if (response == 2)
+                Console.WriteLine("No way!");
+            else if (response == 3)
+                Console.WriteLine("The future is hazy, I can't tell");
+            else if (response == 4)
+                Console.WriteLine("There is a high probability of it being so.");
+            else
+                Console.WriteLine("Outlook not so good.");
+
         }
     }
 }
